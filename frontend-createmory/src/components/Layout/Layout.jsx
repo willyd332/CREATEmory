@@ -6,9 +6,13 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 const Layout = ({ children }) => {
-  <div>
-    {children}
-  </div>
+  return(
+    <div>
+      <Navbar/>
+      <Container>{children}</Container>
+      <Container><Footer/></Container>
+    </div>
+  )
 }
 
 

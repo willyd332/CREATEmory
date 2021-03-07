@@ -7,7 +7,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import LayoutOne from './components/Layout/Layout';
 import AboutPage from './components/AboutPage/AboutPage'
 import BlogPage from './components/BlogPage/BlogPage'
 import HomePage from './components/HomePage/HomePage'
@@ -18,24 +17,15 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <RouteWrapper path="/" component={HomePage} layout={LayoutOne} />
-        <RouteWrapper path="/about" component={AboutPage} layout={LayoutOne} />
-        <RouteWrapper path="/blog" component={BlogPage} layout={LayoutOne} />
-        <RouteWrapper path="/portfolio" component={PortfolioPage} layout={LayoutOne} />
-        <RouteWrapper path="/contact" component={ContactPage} layout={LayoutOne} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/blog" component={BlogPage} />
+        <Route path="/portfolio" component={PortfolioPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/" component={HomePage}  />
       </Switch>
     </BrowserRouter>
   );
 }
 
-const RouteWrapper = ({component: Component, layout: Layout, path}) => {
-  return (
-    <Route path={path} >
-      <Layout >
-        <Component />
-      </Layout>
-    </Route>
-  );
-}
 
 export default App;
