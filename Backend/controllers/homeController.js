@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 
 
 router.get('/', function(req, res){
-	res.render('home/index.ejs');
+	res.json({
+		hello: "hello world"
+	});
 });
 
 
