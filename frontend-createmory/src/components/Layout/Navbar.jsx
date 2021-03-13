@@ -16,6 +16,9 @@ import {Link} from 'react-router-dom'
 // Styles
 import styles from './styles/navbar.module.css'
 
+//image
+import Logo from './images/CREATEmoryLogo.png';
+
 const Navbar = (props) => {
   return(
     <Grid 
@@ -25,7 +28,14 @@ const Navbar = (props) => {
       sm={12}
       spacing={2}
       justify="center"
+      alignItems = "center"
     >
+      <Grid item xs={2}>
+        <a href="/"Home>
+          <img src = {Logo} width="80%" height="80%"/>
+        </a>
+      </Grid>
+      
       <Grid 
         item
         container 

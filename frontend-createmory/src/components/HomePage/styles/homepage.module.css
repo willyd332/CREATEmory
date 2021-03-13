@@ -1,10 +1,15 @@
 .homepageBox {
     background-color: royalblue;
-    height: 50vh;
+    height: 70vh;
     padding: 8px;
     text-align: center;
     vertical-align: middle;
+    font-weight: 400;
+    font-size: 30px;
   }
 .bannerBox {
-    width: 50%;
-  }
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+}
+

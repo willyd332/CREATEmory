@@ -1,4 +1,6 @@
 .navbarBox {
-  background-color: black;
+  background-color: lightsteelblue;
   height: 8vh;
+  font-weight: 600;
+  font-size: 20px;
 }

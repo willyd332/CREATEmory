@@ -24,43 +24,26 @@ const HomePage = (props) => {
   return(
     <Layout>
       <h1>HomePage</h1>
-
-        <Grid 
-        alignItems="stretch"
-        className={styles.homepageBox}
-        >
-          <div
-          className = {styles.bannerBox}
-          >
-          <p> CREATEmory is a new software engineering club designed to facilitate development projects and collaboration between Emory CS students. </p>
-          </div>
-       
-      </Grid>
-
-      <Grid 
-      alignItems="stretch"
-      className={styles.homepageBox}
+      <Grid
+        container
+        direction = "column"
       >
-        <div
-        className = {styles.bannerBox}
-        >
-          <p> We provide Project Management experience and help students develop professional development skills.  </p>
-        </div>
-        
-      </Grid>
 
-      <Grid 
-      alignItems="stretch"
-      className={styles.homepageBox}>
-        <div
-        className = {styles.bannerBox}
-        >
-          <p> CREATEmory is creating a culture of collaboration and support in the Emory community. </p>
-        </div>
-        
-
-
-
+        <Grid item className={styles.homepageBox}>
+          <div className = {styles.bannerBox}>
+            <p> CREATEmory is a new software engineering club designed to facilitate development projects and collaboration between Emory CS students. </p>
+          </div>
+        </Grid>
+        <Grid item className={styles.homepageBox}>
+          <div className = {styles.bannerBox}>
+            <p> We provide Project Management experience and help students develop professional development skills.  </p>
+          </div>
+        </Grid>
+        <Grid item className={styles.homepageBox}>
+          <div className = {styles.bannerBox}>
+            <p> CREATEmory is creating a culture of collaboration and support in the Emory community. </p>
+          </div>
+        </Grid>
 
       </Grid>
     </Layout>
