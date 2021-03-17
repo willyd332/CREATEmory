@@ -15,7 +15,7 @@ const style = {
   box: {
     height: "100vh",
     overflow: 'scroll',
-    backgroundColor: "red"
+    // backgroundColor: "red"
   }
 }
 
