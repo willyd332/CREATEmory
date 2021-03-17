@@ -23,7 +23,6 @@ import styles from './styles/homepage.module.css'
 const HomePage = (props) => {
   return(
     <Layout>
-      <h1>HomePage</h1>
       <Grid
         container
         direction = "column"
@@ -44,7 +43,6 @@ const HomePage = (props) => {
             <p> CREATEmory is creating a culture of collaboration and support in the Emory community. </p>
           </div>
         </Grid>
-
       </Grid>
     </Layout>
   )
