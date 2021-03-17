@@ -10,13 +10,15 @@ import styles from './styles/layout.module.css'
 
 const Layout = ({ children }) => {
   return(
-    <Grid container>
-      <Navbar/>
-      <Container>
-        {children}
-      </Container>
-      <Footer/>
-    </Grid>
+    <Container maxWidth="xl">
+      <Box>
+        <Navbar/>
+        <Container>
+          {children}
+        </Container>
+        <Footer/>
+      </Box>
+    </Container>
   )
 }
 
