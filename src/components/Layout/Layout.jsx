@@ -5,17 +5,25 @@ import { Grid, Box, Container } from '@material-ui/core';
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-// Styles
-import styles from './styles/layout.module.css'
+
+const documentWidth = document.documentElement.clientWidth;
+const windowWidth = window.innerWidth;
+const scrollBarWidth = windowWidth - documentWidth;
+
+const style1 = {
+  height: '90vh', 
+  overflow: 'scroll',
+  marginTop: "0px",
+}
+
+
 
 const Layout = ({ children }) => {
   return(
-    <Container maxWidth="xl">
-      <Box>
+    <Container style={style1} maxWidth="lg">
+      <Box my={0} mx={4}>
         <Navbar/>
-        <Container>
-          {children}
-        </Container>
+        {children}
         <Footer/>
       </Box>
     </Container>
