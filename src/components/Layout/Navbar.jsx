@@ -15,7 +15,7 @@ import Logo from './images/CREATEmoryLogo.png';
 
 // Styles
 const styles = {
-  navbarBox: {
+  navbarCircle: {
     color: "white",
     height: "15vh",
     width: "15vh",
@@ -51,28 +51,30 @@ const Navbar = (props) => {
   };
 
   return(
-    <div style={styles.navbarBox}>
-      <IconButton 
-        style={styles.iconButton}
-        hoveredStyle={styles.iconButtonHover}
-        aria-controls="simple-menu" 
-        aria-haspopup="true" 
-        onClick={handleClick}
-      >
-        <ReorderRoundedIcon style={styles.largeIcon} color="secondary"/>
-      </IconButton>
-      <Menu
-        anchorEl={menuOpen}
-        keepMounted
-        open={menuOpen}
-        onClose={handleClose}
-      >
-        <MenuItem onClick={handleClose}><Link to="/">Home</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/about">About</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/contact">Contact</Link> </MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/blog">Blog</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/portfolio">Portfolio</Link></MenuItem>
-      </Menu>
+    <div>
+      <div style={styles.navbarCircle}>
+        <IconButton 
+          style={styles.iconButton}
+          hoveredStyle={styles.iconButtonHover}
+          aria-controls="simple-menu" 
+          aria-haspopup="true" 
+          onClick={handleClick}
+        >
+          <ReorderRoundedIcon style={styles.largeIcon} color="secondary"/>
+        </IconButton>
+        <Menu
+          anchorEl={menuOpen}
+          keepMounted
+          open={menuOpen}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose}><Link to="/">Home</Link></MenuItem>
+          <MenuItem onClick={handleClose}><Link to="/about">About</Link></MenuItem>
+          <MenuItem onClick={handleClose}><Link to="/contact">Contact</Link> </MenuItem>
+          <MenuItem onClick={handleClose}><Link to="/blog">Blog</Link></MenuItem>
+          <MenuItem onClick={handleClose}><Link to="/portfolio">Portfolio</Link></MenuItem>
+        </Menu>
+      </div>
     </div>
   )
 }
@@ -80,7 +82,7 @@ const Navbar = (props) => {
 // const Navbar = (props) => {
 //   return(
 //     <Grid 
-//       style={styles.navbarBox} 
+//       style={styles.navbarCircle} 
 //       container 
 //       item 
 //       sm={12}

@@ -10,7 +10,7 @@ const style = {
     overflow: 'hidden',
     position: "absolute",
     top: "0",
-    left: "0"
+    left: "0",
   },
   box: {
     height: "100vh",
