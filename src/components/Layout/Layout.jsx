@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+
+// Functions
+import { getScrollPosition, getScrollPercentage } from '../../functions/ScrollFunctions'
+
 // Components
-import { Grid, Box, Container } from '@material-ui/core';
+import { Box, Container } from '@material-ui/core';
 import Navbar from './Navbar'
 import Footer from './Footer'
+import Row from '../Fragments/Row'
 
 const style = {
   container: {
@@ -21,12 +27,29 @@ const style = {
 
 const Layout = ({ children }) => {
 
+  const [scrollPosition, setScrollPosition] = useState(getScrollPosition())
+  const [scrollPercentage, setScrollPercentage] = useState(getScrollPercentage())
+
+
+  // Handler function to handles the scroll event
+  const handleScroll = () => {
+    setScrollPosition(getScrollPosition());
+    console.log(scrollPosition)
+
+    setScrollPercentage(getScrollPercentage());
+    console.log(scrollPercentage)
+  }
+
   return(
     <Container style={{...style.container}} maxWidth="false">
       <Navbar/>
-      <Box style={{...style.box}} my={0} mx={4}>
+      <Box className="scrollBox" onScroll={handleScroll} style={{...style.box}} my={0} mx={0}>
         {children}
-        <Footer/>
+        <Row
+          styles={{height: "10vh"}}
+        >
+          <Footer/>
+        </Row>
       </Box>
     </Container>
   )

@@ -13,25 +13,11 @@ const BlogPage = (props) => {
       <Grid
         container
       >
-        <Row
-          size={{sm: 8}}
-          offset={{sm: 2}}
-        >
-        </Row>
-
-        <Row
-          size={{sm: 8}}
-          offset={{sm: 2}}
-        >
-
-        </Row>
-
-        <Row
-          size={{sm: 8}}
-          offset={{sm: 2}}
-        >
-
-        </Row>
+      
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
 
       </Grid>
     </Layout>

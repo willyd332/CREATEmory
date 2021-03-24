@@ -5,37 +5,63 @@ import {
   Grid,
 } from '@material-ui/core';
 
-// Styles
+// Default Styles
 const defaultStyles = {
-  row: {
-    marginTop: "100px",
-    border: "2px solid white",
-    minHeight: "30vh"
-  }
+  marginTop: "0",
+  border: "2px solid white",
+  height: "100vh",
 }
 
+const defaultSize = {
+  sm: 12,
+  item: true,
+  container: true
+}
 
-const Row = (props) => {
+const defaultCoordinates = {
+  top: 0,
+  left: 0
+}
 
-  const styles = props.styles ? props.styles : defaultStyles;
+const defaultOpacity = 1;
 
-  return(
-  <Grid
-    style={styles.row}
-    item
-    container
-    sm={12}
-  >
-    <Grid {...props.offset}/>
-    <Grid 
-      item
-      container
-      {...props.size}
-    >
-      {props.children}
-    </Grid>
-  </Grid>
-  )
+const defaultAbsolute = false;
+
+
+const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
+
+  // Defining default prop values
+  coordinates = coordinates !== undefined ? coordinates: defaultCoordinates;
+  opacity = opacity !== undefined ? opacity: defaultOpacity;
+  absolute = absolute !== undefined ? absolute: defaultAbsolute;
+  styles = styles !== undefined ? styles : defaultStyles;
+  size = size !== undefined  ? size : defaultSize;
+
+
+  if (absolute) {
+    return(
+      <Grid
+        style={{
+          ...styles,
+          ...coordinates,
+          position: "absolute",
+          opacity: opacity
+        }}
+        {...size}
+      >
+        {children}
+      </Grid>
+      );
+  } else {
+    return(
+      <Grid
+        style={{...styles, opacity: opacity}}
+        {...size}
+      >
+        {children}
+      </Grid>
+      );
+  }
 }
 
 

@@ -21,7 +21,8 @@ const styles = {
     width: "15vh",
     position: "absolute",
     top: "-3vh",
-    right: "-3vh"
+    right: "-3vh",
+    zIndex: 1000,
   },
   largeIcon: {
     height: "8vh",

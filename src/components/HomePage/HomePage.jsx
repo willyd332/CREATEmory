@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, {useState} from 'react';
 
 // Components
 import {
@@ -12,31 +11,25 @@ import Row from '../Fragments/Row'
 
 
 const HomePage = (props) => {
+
+
   return(
     <Layout>
       <Grid
         container
       >
-        <Row
-          size={{sm: 8}}
-          offset={{sm: 2}}
-        >
+        <Row>
+        {
+          // Content
+        }
         </Row>
 
-        <Row
-          size={{sm: 8}}
-          offset={{sm: 2}}
-        >
-
+        <Row>
+        {
+          // Content
+        }
         </Row>
-
-        <Row
-          size={{sm: 8}}
-          offset={{sm: 2}}
-        >
-
-        </Row>
-
+        
       </Grid>
     </Layout>
   )
