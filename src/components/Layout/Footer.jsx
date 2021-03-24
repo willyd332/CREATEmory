@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = (props) => {
   return(
-    <div>
+    <div style={{height: "100%"}} id="footerBox">
       <h1>Footer</h1>
     </div>
   )

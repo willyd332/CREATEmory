@@ -40,17 +40,23 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
 
   if (absolute) {
     return(
-      <Grid
-        style={{
-          ...styles,
-          ...coordinates,
-          position: "absolute",
-          opacity: opacity
-        }}
-        {...size}
-      >
-        {children}
-      </Grid>
+      <>
+        <Grid
+          style={{
+            ...styles,
+            ...coordinates,
+            position: "absolute",
+            opacity: opacity
+          }}
+          {...size}
+        >
+          {children}
+        </Grid>
+        {
+          // this is just a grid to create an invisible scrolling div to track!
+        }
+        <div style={{height: "100vh", width: "100vw", zIndex: 1000}}></div>
+      </>
       );
   } else {
     return(

@@ -34,10 +34,10 @@ const Layout = ({ children }) => {
   // Handler function to handles the scroll event
   const handleScroll = () => {
     setScrollPosition(getScrollPosition());
-    console.log(scrollPosition)
+    // console.log(scrollPosition)
 
     setScrollPercentage(getScrollPercentage());
-    console.log(scrollPercentage)
+    // console.log(scrollPercentage)
   }
 
   return(
