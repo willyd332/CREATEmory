@@ -53,13 +53,15 @@ const Navbar = (props) => {
 
   return(
     <div>
-      <div style={styles.navbarCircle}>
+      <div 
+        style={styles.navbarCircle}
+        onClick={handleClick}
+      >
         <IconButton 
           style={styles.iconButton}
           hoveredStyle={styles.iconButtonHover}
           aria-controls="simple-menu" 
           aria-haspopup="true" 
-          onClick={handleClick}
         >
           <ReorderRoundedIcon style={styles.largeIcon} color="secondary"/>
         </IconButton>

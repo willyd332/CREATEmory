@@ -9,6 +9,7 @@ import { Box, Container } from '@material-ui/core';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Row from '../Fragments/Row'
+import { isExpressionWithTypeArguments } from 'typescript';
 
 const style = {
   container: {
@@ -19,8 +20,9 @@ const style = {
     left: "0",
   },
   box: {
-    height: "100vh",
     overflow: 'scroll',
+    maxHeight: "100vh",
+    minHeight: "100vh"
     // backgroundColor: "red"
   }
 }
@@ -34,17 +36,19 @@ const Layout = ({ children }) => {
   // Handler function to handles the scroll event
   const handleScroll = () => {
     setScrollPosition(getScrollPosition());
-    // console.log(scrollPosition)
 
     setScrollPercentage(getScrollPercentage());
-    // console.log(scrollPercentage)
   }
 
   return(
     <Container style={{...style.container}} maxWidth="false">
       <Navbar/>
       <Box className="scrollBox" onScroll={handleScroll} style={{...style.box}} my={0} mx={0}>
-        {children}
+        {
+          React.Children.map(children, child => {
+            return React.cloneElement(child, {scrollPosition: scrollPosition, scrollPercentage: scrollPercentage});
+          })
+        }
         <Row
           styles={{height: "10vh"}}
         >

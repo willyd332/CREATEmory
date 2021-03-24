@@ -55,7 +55,7 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
         {
           // this is just a grid to create an invisible scrolling div to track!
         }
-        <div style={{height: "100vh", width: "100vw", zIndex: 1000}}></div>
+        <div style={{height: "100vh", width: "100vw", zIndex: 2}}></div>
       </>
       );
   } else {

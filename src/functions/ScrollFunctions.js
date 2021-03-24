@@ -20,7 +20,6 @@ export const getScrollPercentage = () => {
       // 0% would be at the top of second
       // 33% would be at the top of second
       // 66% would be at the top of third
-      
 
     return element.scrollTop / (element.scrollHeight - footer.scrollHeight);
   } else {
