@@ -10,6 +10,7 @@ const defaultStyles = {
   marginTop: "0",
   border: "2px solid white",
   height: "100vh",
+  color: "white"
 }
 
 const defaultSize = {

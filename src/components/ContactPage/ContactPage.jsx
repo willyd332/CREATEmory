@@ -1,26 +1,42 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 // Components
 import {
   Grid,
 } from '@material-ui/core';
-import Layout from '../Layout/Layout';
 import Row from '../Fragments/Row'
 
-const ContactPage = (props) => {
+const ContactPage = ({pageWidth, scrollPercentage}) => {
+
+  const [leftCoordinate, setLeftCoordinate]= useState(pageWidth)
+
+  console.log(scrollPercentage)
+
+  useEffect(() => {
+      const newCoordinate = ((pageWidth - (pageWidth * (scrollPercentage*2))) > 0) ? (pageWidth - (pageWidth * (scrollPercentage*2))) : 0;
+      setLeftCoordinate(newCoordinate)
+  }, [scrollPercentage, pageWidth])
+
   return(
-    <Layout>
+    <>
       <Grid
         container
       >
-      
-      <Row></Row>
-      <Row></Row>
-      <Row></Row>
-      <Row></Row>
+
+      <Row
+        absolute
+      >
+        THE FIRST ROW!!
+      </Row>
+      <Row
+        coordinates={{top: 0, left: leftCoordinate}}
+        absolute
+      >
+        THE SECOND ROW!!
+      </Row>
 
       </Grid>
-    </Layout>
+    </>
   )
 }
 

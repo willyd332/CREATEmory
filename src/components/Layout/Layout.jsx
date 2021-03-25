@@ -3,13 +3,13 @@ import React, {useState} from 'react';
 
 // Functions
 import { getScrollPosition, getScrollPercentage } from '../../functions/ScrollFunctions'
+import { getPageWidth } from '../../functions/PageSize'
 
 // Components
 import { Box, Container } from '@material-ui/core';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Row from '../Fragments/Row'
-import { isExpressionWithTypeArguments } from 'typescript';
 
 const style = {
   container: {
@@ -32,11 +32,13 @@ const Layout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(getScrollPosition())
   const [scrollPercentage, setScrollPercentage] = useState(getScrollPercentage())
 
+  // MAKE SURE TO HAVE THIS UPDATAE WHEN PAGE WIDTH CHANGES
+  const [pageWidth, setPageWidth] = useState(getPageWidth());
+
 
   // Handler function to handles the scroll event
   const handleScroll = () => {
     setScrollPosition(getScrollPosition());
-
     setScrollPercentage(getScrollPercentage());
   }
 
@@ -46,7 +48,7 @@ const Layout = ({ children }) => {
       <Box className="scrollBox" onScroll={handleScroll} style={{...style.box}} my={0} mx={0}>
         {
           React.Children.map(children, child => {
-            return React.cloneElement(child, {scrollPosition: scrollPosition, scrollPercentage: scrollPercentage});
+            return React.cloneElement(child, {scrollPosition: scrollPosition, scrollPercentage: scrollPercentage, pageWidth: pageWidth});
           })
         }
         <Row
