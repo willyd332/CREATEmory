@@ -10,12 +10,17 @@ const ContactPage = ({pageWidth, scrollPercentage}) => {
 
   const [leftCoordinate, setLeftCoordinate]= useState(pageWidth)
 
-  console.log(scrollPercentage)
+  
 
   useEffect(() => {
       const newCoordinate = ((pageWidth - (pageWidth * (scrollPercentage*2))) > 0) ? (pageWidth - (pageWidth * (scrollPercentage*2))) : 0;
       setLeftCoordinate(newCoordinate)
+      console.log("1: " + leftCoordinate);
+      console.log("2: " + leftCoordinate1);
   }, [scrollPercentage, pageWidth])
+
+  const leftCoordinate1 = -(pageWidth - leftCoordinate);
+  
 
   return(
     <>
@@ -25,6 +30,7 @@ const ContactPage = ({pageWidth, scrollPercentage}) => {
 
       <Row
         absolute
+        coordinates={{top: 0, left: leftCoordinate1}}
       >
         THE FIRST ROW!!
       </Row>
