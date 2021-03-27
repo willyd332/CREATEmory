@@ -62,7 +62,7 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
   } else {
     return(
       <Grid
-        style={{...styles, opacity: opacity}}
+        style={{...styles, opacity: opacity, position: "relative"}}
         {...size}
       >
         {children}

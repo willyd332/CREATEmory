@@ -10,11 +10,12 @@ const defaultStyles = {
   marginTop: "0",
   border: "2px solid white",
   height: "10%",
+  width: "10%",
   color: "white"
 }
 
 const defaultSize = {
-  sm: 2,
+  item: true,
 }
 
 const defaultCoordinates = {
@@ -40,17 +41,16 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
   if (absolute) {
     return(
       <>
-        <Grid
+        <div
           style={{
             ...styles,
             ...coordinates,
             position: "absolute",
             opacity: opacity
           }}
-          {...size}
         >
           {children}
-        </Grid>
+        </div>
         {
           // this is just a grid to create an invisible scrolling div to track!
         }
