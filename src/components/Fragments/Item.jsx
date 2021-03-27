@@ -9,12 +9,12 @@ import {
 const defaultStyles = {
   marginTop: "0",
   border: "2px solid white",
-  height: "100vh",
+  height: "10%",
   color: "white"
 }
 
 const defaultSize = {
-  sm: 3,
+  sm: 2,
 }
 
 const defaultCoordinates = {
@@ -54,7 +54,6 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
         {
           // this is just a grid to create an invisible scrolling div to track!
         }
-        <div style={{height: "100vh", width: "100vw", zIndex: 2}}></div>
       </>
       );
   } else {
