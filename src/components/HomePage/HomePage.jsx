@@ -48,29 +48,12 @@ const HomePage = ({scrollPosition, scrollPercentage}) => {
       <Grid
         container
       >
-        <Row absolute opacity={opacityValues[0]}>
-          <img 
-            src="https://officialpsds.com/imageview/71/ym/71ymvv_large.png?1521316467"
-            style={{width:"100%", height: "100%"}}
-            alt="space"
-          />
-        </Row>
 
-        <Row absolute opacity={opacityValues[1]}>
-          <img 
-            src="https://i.pinimg.com/originals/89/00/4b/89004be943011dffa76598bd33170660.png"
-            style={{width:"100%", height: "100%"}}
-            alt="space"
-          />
-        </Row>
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
 
-        <Row absolute opacity={opacityValues[2]}>
-          <img 
-            src="https://www.pikpng.com/pngl/b/58-581481_abstract-swirl-png-transparent-image-flower-art-design.png"
-            style={{width:"100%", height: "100%"}}
-            alt="space"
-          />
-        </Row>
         
       </Grid>
     </>

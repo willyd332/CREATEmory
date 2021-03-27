@@ -7,19 +7,19 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import AboutPage from './components/AboutPage/AboutPage'
-import BlogPage from './components/BlogPage/BlogPage'
+import AboutPageContainer from './components/AboutPage/AboutPageContainer'
+import BlogPageContainer from './components/BlogPage/BlogPageContainer'
 import HomePageContainer from './components/HomePage/HomePageContainer'
-import PortfolioPage from './components/PortfolioPage/PortfolioPage'
+import PortfolioPageContainer from './components/PortfolioPage/PortfolioPageContainer'
 import ContactPageContainer from './components/ContactPage/ContactPageContainer'
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/about" component={AboutPage} />
-        <Route path="/blog" component={BlogPage} />
-        <Route path="/portfolio" component={PortfolioPage} />
+        <Route path="/about" component={AboutPageContainer} />
+        <Route path="/blog" component={BlogPageContainer} />
+        <Route path="/portfolio" component={PortfolioPageContainer} />
         <Route path="/contact" component={ContactPageContainer} />
         <Route path="/" component={HomePageContainer}  />
       </Switch>
