@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+
+// Functions
+import { getScrollPosition, getScrollPercentage } from '../../functions/ScrollFunctions'
+import { getPageWidth } from '../../functions/PageSize'
+
 // Components
-import { Grid, Box, Container } from '@material-ui/core';
+import { Box, Container } from '@material-ui/core';
 import Navbar from './Navbar'
 import Footer from './Footer'
+import Row from '../Fragments/Row'
 
 const style = {
   container: {
@@ -10,23 +17,45 @@ const style = {
     overflow: 'hidden',
     position: "absolute",
     top: "0",
-    left: "0"
+    left: "0",
   },
   box: {
-    height: "100vh",
     overflow: 'scroll',
+    maxHeight: "100vh",
+    minHeight: "100vh"
     // backgroundColor: "red"
   }
 }
 
 const Layout = ({ children }) => {
 
+  const [scrollPosition, setScrollPosition] = useState(getScrollPosition())
+  const [scrollPercentage, setScrollPercentage] = useState(getScrollPercentage())
+
+  // MAKE SURE TO HAVE THIS UPDATAE WHEN PAGE WIDTH CHANGES
+  const [pageWidth, setPageWidth] = useState(getPageWidth());
+
+
+  // Handler function to handles the scroll event
+  const handleScroll = () => {
+    setScrollPosition(getScrollPosition());
+    setScrollPercentage(getScrollPercentage());
+  }
+
   return(
     <Container style={{...style.container}} maxWidth="false">
       <Navbar/>
-      <Box style={{...style.box}} my={0} mx={4}>
-        {children}
-        <Footer/>
+      <Box className="scrollBox" onScroll={handleScroll} style={{...style.box}} my={0} mx={0}>
+        {
+          React.Children.map(children, child => {
+            return React.cloneElement(child, {scrollPosition: scrollPosition, scrollPercentage: scrollPercentage, pageWidth: pageWidth});
+          })
+        }
+        <Row
+          styles={{height: "10vh"}}
+        >
+          <Footer/>
+        </Row>
       </Box>
     </Container>
   )

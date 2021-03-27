@@ -9,9 +9,9 @@ import {
 } from "react-router-dom";
 import AboutPage from './components/AboutPage/AboutPage'
 import BlogPage from './components/BlogPage/BlogPage'
-import HomePage from './components/HomePage/HomePage'
+import HomePageContainer from './components/HomePage/HomePageContainer'
 import PortfolioPage from './components/PortfolioPage/PortfolioPage'
-import ContactPage from './components/ContactPage/ContactPage'
+import ContactPageContainer from './components/ContactPage/ContactPageContainer'
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
         <Route path="/about" component={AboutPage} />
         <Route path="/blog" component={BlogPage} />
         <Route path="/portfolio" component={PortfolioPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route path="/" component={HomePage}  />
+        <Route path="/contact" component={ContactPageContainer} />
+        <Route path="/" component={HomePageContainer}  />
       </Switch>
     </BrowserRouter>
   );

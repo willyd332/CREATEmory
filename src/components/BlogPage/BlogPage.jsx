@@ -1,12 +1,25 @@
 import React from 'react';
 
 // Components
+import {
+  Grid,
+} from '@material-ui/core';
 import Layout from '../Layout/Layout';
+import Row from '../Fragments/Row'
 
 const BlogPage = (props) => {
   return(
     <Layout>
-      <h1>BlogPage</h1>
+      <Grid
+        container
+      >
+      
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
+
+      </Grid>
     </Layout>
   )
 }
