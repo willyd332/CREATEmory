@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
           })
         }
         <Row
-          styles={{height: "10vh"}}
+          height={4}
         >
           <Footer/>
         </Row>

@@ -10,9 +10,10 @@ const defaultStyles = {
   marginTop: "0",
   height: "100vh",
   background: "white",
-  backgroundSize: "contain",
+  backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  backgroundPosition: "center"
+  backgroundPosition: "center",
+  border: "1px solid black"
 
 }
 
@@ -31,8 +32,10 @@ const defaultOpacity = 1;
 
 const defaultAbsolute = false;
 
+const defaultHeight = "100vh"
 
-const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
+
+const Row = ({styles, size, children, absolute, opacity, coordinates, height}) => {
 
   // Defining default prop values
   coordinates = coordinates !== undefined ? coordinates: defaultCoordinates;
@@ -40,6 +43,7 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
   absolute = absolute !== undefined ? absolute: defaultAbsolute;
   styles = styles !== undefined ? {...defaultStyles, ...styles} : defaultStyles;
   size = size !== undefined  ? size : defaultSize;
+  height = height !== undefined  ? (`${height * 10}vh`) : defaultHeight;
 
 
   if (absolute) {
@@ -50,7 +54,8 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
             ...styles,
             ...coordinates,
             position: "absolute",
-            opacity: opacity
+            opacity: opacity,
+            height: height
           }}
           {...size}
         >
@@ -65,7 +70,7 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
   } else {
     return(
       <Grid
-        style={{...styles, opacity: opacity}}
+        style={{...styles, opacity: opacity, height: height}}
         {...size}
       >
         {children}
@@ -76,3 +81,29 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
 
 
 export default Row;
+
+
+
+/*
+ROW DOCS
+Height
+  - Value from 1 to 10 that defines height
+
+Styles
+  - An object of any custom styles you want
+  - DON'T FORGET TO ADD THE S!!
+
+Absolute
+  - A boolean that will make the row absolute and create the Clearfix div
+
+Coordinates
+  - Only for absolute rows. Defines the coordinates of the row for animation effects
+
+Size
+  - An object that you can use to apply any material UI properties 
+  - ex. <Row size={{sm: 2, lg: 6, }}
+
+Opacity
+  - Defines the opacity of the row (seperate in case one wants to use animations)
+
+*/
