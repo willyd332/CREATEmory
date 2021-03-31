@@ -56,6 +56,9 @@ const Layout = ({ children }) => {
         }
         <Row
           height={4}
+          styles={{
+            backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6C9uMR7vzites5vIqruP7Lxd5dvh6UZJ3-Q&usqp=CAU)"
+          }}
         >
           <Footer/>
         </Row>

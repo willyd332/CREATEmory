@@ -13,8 +13,6 @@ const defaultStyles = {
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  border: "1px solid black"
-
 }
 
 const defaultSize = {
@@ -42,7 +40,7 @@ const Row = ({styles, size, children, absolute, opacity, coordinates, height}) =
   opacity = opacity !== undefined ? opacity: defaultOpacity;
   absolute = absolute !== undefined ? absolute: defaultAbsolute;
   styles = styles !== undefined ? {...defaultStyles, ...styles} : defaultStyles;
-  size = size !== undefined  ? size : defaultSize;
+  size = size !== undefined  ? {...defaultSize, ...size} : defaultSize;
   height = height !== undefined  ? (`${height * 10}vh`) : defaultHeight;
 
 
