@@ -1,2 +1,10 @@
+.description {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: right;
+}
 
 
+.problemHeader {
+  text-align: center;
+}

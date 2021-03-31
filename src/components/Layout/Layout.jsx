@@ -14,6 +14,7 @@ import Row from '../Fragments/Row'
 const style = {
   container: {
     height: '100vh', 
+    background: "white",
     overflow: 'hidden',
     position: "absolute",
     top: "0",
@@ -22,7 +23,12 @@ const style = {
   box: {
     overflow: 'scroll',
     maxHeight: "100vh",
-    minHeight: "100vh"
+    minHeight: "100vh",
+    margin: 0,
+    width: "100%",
+    position: "absolute",
+    top: "0",
+    left: "0",
     // backgroundColor: "red"
   }
 }
@@ -31,9 +37,6 @@ const Layout = ({ children }) => {
 
   const [scrollPosition, setScrollPosition] = useState(getScrollPosition())
   const [scrollPercentage, setScrollPercentage] = useState(getScrollPercentage())
-
-  // MAKE SURE TO HAVE THIS UPDATAE WHEN PAGE WIDTH CHANGES
-  const [pageWidth, setPageWidth] = useState(getPageWidth());
 
 
   // Handler function to handles the scroll event
@@ -48,7 +51,7 @@ const Layout = ({ children }) => {
       <Box className="scrollBox" onScroll={handleScroll} style={{...style.box}} my={0} mx={0}>
         {
           React.Children.map(children, child => {
-            return React.cloneElement(child, {scrollPosition: scrollPosition, scrollPercentage: scrollPercentage, pageWidth: pageWidth});
+            return React.cloneElement(child, {scrollPosition: scrollPosition, scrollPercentage: scrollPercentage});
           })
         }
         <Row

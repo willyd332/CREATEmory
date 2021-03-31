@@ -8,9 +8,12 @@ import {
 // Default Styles
 const defaultStyles = {
   marginTop: "0",
-  border: "2px solid white",
   height: "100vh",
-  color: "white"
+  background: "white",
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center"
+
 }
 
 const defaultSize = {
@@ -35,7 +38,7 @@ const Row = ({styles, size, children, absolute, opacity, coordinates}) => {
   coordinates = coordinates !== undefined ? coordinates: defaultCoordinates;
   opacity = opacity !== undefined ? opacity: defaultOpacity;
   absolute = absolute !== undefined ? absolute: defaultAbsolute;
-  styles = styles !== undefined ? styles : defaultStyles;
+  styles = styles !== undefined ? {...defaultStyles, ...styles} : defaultStyles;
   size = size !== undefined  ? size : defaultSize;
 
 
